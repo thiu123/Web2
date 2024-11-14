@@ -40,7 +40,7 @@ export default {
         toast.success("Word updated successfully!", {
           autoClose: 1000,
         });
-        // console.log(updatedNewWord);
+        // console.log("word after update", updatedNewWord);
         setTimeout(() => {
           this.$router.push({
             name: "show",
@@ -69,5 +69,8 @@ export default {
 
 div {
   animation: fadeIn 0.5s;
+}
+h1 {
+  color: #007bff;
 }
 </style>

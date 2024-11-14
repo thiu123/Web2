@@ -51,4 +51,7 @@ export default {
 div {
   animation: fadeIn 0.5s;
 }
+h1 {
+  color: #007bff;
+}
 </style>

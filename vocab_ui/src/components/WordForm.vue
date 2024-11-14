@@ -1,12 +1,14 @@
 <template>
-  <form action="#" @submit.prevent="onSubmit">
+  <form action="#" @submit.prevent="onSubmit" class="form-container">
     <p v-if="errorsPresent" class="error">Please fill out both fields!</p>
+
     <div class="ui labeled input fluid custom_input">
       <div class="ui label"><i class="germany flag"></i> German</div>
       <input
         type="text"
         placeholder="Enter word..."
         v-model="localWord.german"
+        class="input-field"
       />
     </div>
 
@@ -16,9 +18,10 @@
         type="text"
         placeholder="Enter word..."
         v-model="localWord.english"
+        class="input-field"
       />
     </div>
-    <button class="positive ui button">Submit</button>
+    <button class="positive ui button submit-button">Submit</button>
   </form>
 </template>
 
@@ -61,13 +64,37 @@ export default {
 </script>
 
 <style scoped>
-.custom_english {
-  margin-bottom: 10px;
+.form-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0;
 }
-.custom_input {
-  margin: 10px 0;
+
+.ui.labeled.input {
+  margin-bottom: 15px;
 }
-.error {
-  color: red;
+
+.input-field {
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  padding: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.submit-button {
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 </style>

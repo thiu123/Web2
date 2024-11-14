@@ -2,7 +2,7 @@
   <div>
     <h2>Score: {{ score }} out of {{ this.words.length }}</h2>
 
-    <form action="#" @submit.prevent="onSubmit">
+    <form action="#" @submit.prevent="onSubmit" class="form-container">
       <div class="ui labeled input fluid custom_input">
         <div class="ui label"><i class="germany flag"></i> German</div>
         <input
@@ -23,7 +23,9 @@
         />
       </div>
 
-      <button class="positive ui button" :disabled="testOver">Submit</button>
+      <button class="positive ui button submit-button" :disabled="testOver">
+        Submit
+      </button>
     </form>
 
     <p :class="{ results: resultClass }">
@@ -100,15 +102,54 @@ export default {
 </script>
 
 <style scoped>
-.custom_english {
-  padding-bottom: 10px;
+.form-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f0f0f0;
 }
-.custom_input {
-  margin: 10px 0;
+
+.error {
+  color: #f44336;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
 }
-.results {
-  margin: 25px auto;
-  padding: 15px;
+
+.ui.labeled.input {
+  margin-bottom: 15px;
+}
+
+.input-field {
   border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  padding: 12px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.submit-button {
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+h2 {
+  color: #007bff;
 }
 </style>

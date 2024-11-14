@@ -68,8 +68,7 @@ export default {
 
 <style scoped>
 h1 {
-  text-align: center;
-  color: #333;
+  color: #007bff;
 }
 
 table {
