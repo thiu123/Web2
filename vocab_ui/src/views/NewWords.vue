@@ -15,9 +15,13 @@ export default {
   },
   methods: {
     async createOrUpdate(word) {
-      const res = await api.createWord(word);
-      console.log(res);
-      this.$router.push(`/all-words/${res._id}`);
+      try {
+        const res = await api.createWord(word);
+        // console.log(res);
+        this.$router.push(`/all-words/${res._id}`);
+      } catch (error) {
+        console.error("Error creating/updating word:", error);
+      }
     },
   },
 };

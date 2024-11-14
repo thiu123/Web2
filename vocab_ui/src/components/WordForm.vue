@@ -1,7 +1,6 @@
 <template>
   <form action="#" @submit.prevent="onSubmit">
     <p v-if="errorsPresent" class="error">Please fill out both fields!</p>
-
     <div class="ui labeled input fluid custom_input">
       <div class="ui label"><i class="germany flag"></i> German</div>
       <input
@@ -39,14 +38,17 @@ export default {
     return {
       errorsPresent: false,
       localWord: {
-        german: this.word.german,
-        english: this.word.english,
+        german: this.word.german || "",
+        english: this.word.english || "",
       },
     };
   },
   methods: {
     onSubmit() {
-      if (this.localWord.english === "" || this.localWord.german === "") {
+      if (
+        this.localWord.english.trim() === "" ||
+        this.localWord.german.trim() === ""
+      ) {
         this.errorsPresent = true;
       } else {
         this.errorsPresent = false;
