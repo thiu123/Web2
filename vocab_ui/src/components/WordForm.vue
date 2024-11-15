@@ -21,6 +21,16 @@
         class="input-field"
       />
     </div>
+
+    <div class="ui labeled input fluid custom_english">
+      <div class="ui label"><i class="vn flag"></i>Vietnamese</div>
+      <input
+        type="text"
+        placeholder="Enter word..."
+        v-model="localWord.vietnamese"
+        class="input-field"
+      />
+    </div>
     <button class="positive ui button submit-button">Submit</button>
   </form>
 </template>
@@ -33,7 +43,7 @@ export default {
       type: Object,
       required: false,
       default: () => {
-        return { german: "", english: "" };
+        return { german: "", english: "", vietnamese: "" };
       },
     },
   },
@@ -43,6 +53,7 @@ export default {
       localWord: {
         german: this.word.german || "",
         english: this.word.english || "",
+        vietnamese: this.word.vietnamese || "",
       },
     };
   },
@@ -50,7 +61,8 @@ export default {
     onSubmit() {
       if (
         this.localWord.english.trim() === "" ||
-        this.localWord.german.trim() === ""
+        this.localWord.german.trim() === "" ||
+        this.localWord.vietnamese.trim() === ""
       ) {
         this.errorsPresent = true;
       } else {
@@ -81,7 +93,6 @@ export default {
   border-radius: 5px;
   border: 1px solid #dcdcdc;
   padding: 10px;
-  font-size: 1rem;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 

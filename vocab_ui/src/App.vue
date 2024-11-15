@@ -37,6 +37,17 @@ export default {
   margin-bottom: 1.5em;
 }
 
+.ui.menu .item {
+  transition: all 0.3s ease;
+}
+
+.ui.menu .item:hover {
+  text-decoration: underline;
+  color: #21ba45;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .myFlash {
   width: 250px;
   margin: 10px;

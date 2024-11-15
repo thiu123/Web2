@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Edit Word</h1>
+    <h1>EDIT WORD</h1>
     <word-form
       @createOrUpdate="createOrUpdate($event)"
       :word="word"
@@ -11,8 +11,6 @@
 <script>
 import WordForm from "../components/WordForm.vue";
 import { api } from "../helpers/helpers";
-import { toast } from "vue3-toastify";
-import "vue3-toastify/dist/index.css";
 
 export default {
   components: {
@@ -37,16 +35,10 @@ export default {
         const updatedNewWord = { ...word, _id: this.$route.params.id };
         // console.log("word", word);
         await api.updateWord(updatedNewWord);
-        toast.success("Word updated successfully!", {
-          autoClose: 1000,
+        this.$router.push({
+          name: "show",
+          params: { id: this.$route.params.id },
         });
-        // console.log("word after update", updatedNewWord);
-        setTimeout(() => {
-          this.$router.push({
-            name: "show",
-            params: { id: this.$route.params.id },
-          });
-        }, 2000);
       } catch (error) {
         console.error("Error updating word:", error);
       }

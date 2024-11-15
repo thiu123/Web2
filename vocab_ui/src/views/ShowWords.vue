@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Show Word</h1>
+    <h1>SHOW WORD</h1>
     <div class="container">
       <div class="ui labeled input fluid input-spacing custom_input">
         <div class="ui label"><i class="germany flag"></i> German</div>
@@ -9,6 +9,10 @@
       <div class="ui labeled input fluid">
         <div class="ui label"><i class="united kingdom flag"></i> English</div>
         <input type="text" readonly :value="word.english" />
+      </div>
+      <div class="ui labeled input fluid">
+        <div class="ui label"><i class="vn flag"></i>Vietnamese</div>
+        <input type="text" readonly :value="word.vietnamese" />
       </div>
       <div class="actions">
         <router-link

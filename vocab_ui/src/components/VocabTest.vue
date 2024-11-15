@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h2>Score: {{ score }} out of {{ this.words.length }}</h2>
+    <h2>Score: {{ score }} out of {{ words.length }}</h2>
+    <!-- <p>{{ currWord }}</p> -->
 
     <form action="#" @submit.prevent="onSubmit" class="form-container">
       <div class="ui labeled input fluid custom_input">
@@ -18,6 +19,16 @@
           type="text"
           placeholder="Enter word..."
           v-model="english"
+          :disabled="testOver"
+          autocomplete="off"
+        />
+      </div>
+      <div class="ui labeled input fluid custom_english">
+        <div class="ui label"><i class="vn flag"></i>Vietnamese</div>
+        <input
+          type="text"
+          placeholder="Enter word..."
+          v-model="vietnamese"
           :disabled="testOver"
           autocomplete="off"
         />
@@ -52,6 +63,7 @@ export default {
       result: "",
       resultClass: "",
       english: "",
+      vietnamese: "",
       score: 0,
       testOver: false,
     };
@@ -67,7 +79,10 @@ export default {
       return words.sort(() => 0.5 - Math.random());
     },
     onSubmit: function () {
-      if (this.english === this.currWord.english) {
+      if (
+        this.english === this.currWord.english &&
+        this.vietnamese === this.currWord.vietnamese
+      ) {
         toast.success("Correct!", {
           autoClose: 1000,
         });
@@ -80,6 +95,7 @@ export default {
       }
 
       this.english = "";
+      this.vietnamese = "";
       this.randWords.shift();
 
       if (this.randWords.length === 0) {
