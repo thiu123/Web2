@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>TEST</h1>
-
+    <div class="ui divider"></div>
     <div v-if="words.length < 5">
       <p>You need to enter at least five words to begin the test</p>
     </div>

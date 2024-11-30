@@ -34,9 +34,7 @@
         />
       </div>
 
-      <button class="positive ui button submit-button" :disabled="testOver">
-        Submit
-      </button>
+      <button class="primary ui button" :disabled="testOver">Submit</button>
     </form>
 
     <p :class="{ results: resultClass }">
@@ -120,49 +118,15 @@ export default {
 <style scoped>
 .form-container {
   max-width: 1000px;
-  margin: auto;
+  margin: 20px auto;
   padding: 20px;
-  border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: #f0f0f0;
-}
-
-.error {
-  color: #f44336;
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  text-align: center;
-  font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
 }
 
 .ui.labeled.input {
-  margin-bottom: 15px;
-}
-
-.input-field {
-  border-radius: 5px;
-  border: 1px solid #dcdcdc;
-  padding: 12px;
-  font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.input-field:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-  outline: none;
-}
-
-.submit-button {
-  padding: 12px;
-  font-size: 1.1rem;
-  border-radius: 5px;
-  color: white;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.submit-button:hover {
-  background-color: #45a049;
+  margin-bottom: 20px;
 }
 
 h2 {

@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>WORDS</h1>
+    <div class="ui divider"></div>
     <table id="words" class="ui celled compact table">
       <thead>
         <tr>
@@ -73,36 +74,19 @@ h1 {
   color: #007bff;
 }
 
-table {
+#words {
   width: 100%;
-  border-collapse: collapse;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
-  background-color: #fff;
-}
-
-th {
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
+  margin-top: 25px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 tr:hover {
   background-color: #f1f1f1;
 }
 
-a {
-  color: #007bff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
 a:hover {
   color: blue;
-}
-
-.center.aligned {
-  text-align: center;
 }
 
 @keyframes fadeIn {

@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>EDIT WORD</h1>
+    <div class="ui divider"></div>
     <word-form
       @createOrUpdate="createOrUpdate($event)"
       :word="word"

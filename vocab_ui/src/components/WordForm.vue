@@ -31,7 +31,7 @@
         class="input-field"
       />
     </div>
-    <button class="positive ui button submit-button">Submit</button>
+    <button class="primary ui button">Submit</button>
   </form>
 </template>
 
@@ -78,34 +78,14 @@ export default {
 <style scoped>
 .form-container {
   max-width: 1000px;
-  margin: auto;
+  margin: 20px auto;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #f0f0f0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
 }
 
 .ui.labeled.input {
-  margin-bottom: 15px;
-}
-
-.input-field {
-  border-radius: 5px;
-  border: 1px solid #dcdcdc;
-  padding: 10px;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.input-field:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  outline: none;
-}
-
-.submit-button {
-  padding: 10px;
-  font-size: 1.1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  margin-bottom: 20px;
 }
 </style>

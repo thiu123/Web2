@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>SHOW WORD</h1>
+    <div class="ui divider"></div>
     <div class="container">
       <div class="ui labeled input fluid input-spacing custom_input">
         <div class="ui label"><i class="germany flag"></i> German</div>
@@ -15,7 +16,7 @@
         <input type="text" readonly :value="word.vietnamese" />
       </div>
       <div class="actions">
-        <button class="positive ui button">
+        <button class="primary ui button">
           <router-link
             :to="{ name: 'edit', params: { id: this.$route.params.id } }"
           >
@@ -48,45 +49,23 @@ export default {
 <style scoped>
 .container {
   max-width: 1000px;
-  margin: auto;
-  padding: 30px;
-  border-radius: 10px;
+  margin: 20px auto;
+  padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: #f0f0f0;
-}
-
-.custom_input {
-  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
 }
 
 .ui.labeled.input {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .input-spacing {
   margin-bottom: 10px;
 }
 
-.input-field {
-  border-radius: 5px;
-  border: 1px solid #dcdcdc;
-  padding: 10px;
-  font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.input-field:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-  outline: none;
-}
-
 button a {
   color: white;
-}
-
-.actions {
-  margin-top: 20px;
 }
 
 @keyframes fadeIn {
@@ -103,6 +82,7 @@ button a {
 div {
   animation: fadeIn 0.5s;
 }
+
 h1 {
   color: #007bff;
 }

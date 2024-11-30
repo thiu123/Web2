@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>NEW WORD</h1>
+    <div class="ui divider"></div>
     <word-form @createOrUpdate="createOrUpdate"></word-form>
   </div>
 </template>
