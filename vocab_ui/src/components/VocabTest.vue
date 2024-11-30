@@ -37,7 +37,7 @@
       <button class="primary ui button" :disabled="testOver">Submit</button>
     </form>
 
-    <p :class="{ results: resultClass }">
+    <p :class="['results', resultClass]">
       <span v-html="result"></span>
     </p>
   </div>
@@ -131,5 +131,25 @@ export default {
 
 h2 {
   color: #007bff;
+}
+
+.results {
+  padding: 15px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.results.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.results.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
 }
 </style>
