@@ -88,4 +88,16 @@ export default {
 .ui.labeled.input {
   margin-bottom: 20px;
 }
+
+.error {
+  color: #f44336;
+  background-color: #fdecea;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid #f44336;
+  font-weight: bold;
+}
 </style>
