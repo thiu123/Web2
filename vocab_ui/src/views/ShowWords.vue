@@ -15,11 +15,13 @@
         <input type="text" readonly :value="word.vietnamese" />
       </div>
       <div class="actions">
-        <router-link
-          :to="{ name: 'edit', params: { id: this.$route.params.id } }"
-        >
-          Edit word
-        </router-link>
+        <button class="positive ui button">
+          <router-link
+            :to="{ name: 'edit', params: { id: this.$route.params.id } }"
+          >
+            Edit word
+          </router-link>
+        </button>
       </div>
     </div>
   </div>
@@ -79,18 +81,12 @@ export default {
   outline: none;
 }
 
+button a {
+  color: white;
+}
+
 .actions {
   margin-top: 20px;
-}
-
-.actions a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.actions a:hover {
-  text-decoration: underline;
 }
 
 @keyframes fadeIn {

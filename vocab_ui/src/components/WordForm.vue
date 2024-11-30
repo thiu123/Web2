@@ -1,6 +1,6 @@
 <template>
   <form action="#" @submit.prevent="onSubmit" class="form-container">
-    <p v-if="errorsPresent" class="error">Please fill out both fields!</p>
+    <p v-if="errorsPresent" class="error">Please fill out all three fields!</p>
 
     <div class="ui labeled input fluid custom_input">
       <div class="ui label"><i class="germany flag"></i> German</div>
