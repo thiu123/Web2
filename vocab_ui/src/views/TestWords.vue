@@ -2,7 +2,7 @@
   <div>
     <h1>TEST</h1>
     <div class="ui divider"></div>
-    <div v-if="words.length < 5">
+    <div v-if="words.length < 5" class="notification">
       <p>You need to enter at least five words to begin the test</p>
     </div>
     <div v-else>
@@ -53,5 +53,11 @@ div {
 }
 h1 {
   color: #007bff;
+}
+
+.notification {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
 }
 </style>
