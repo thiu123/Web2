@@ -5,34 +5,42 @@
     <table id="words" class="ui celled compact table">
       <thead>
         <tr>
-          <th>English</th>
-          <th>German</th>
-          <th>Vietnamese</th>
+          <th><i class="uk flag"></i> English</th>
+          <th><i class="germany flag"></i> German</th>
+          <th><i class="vn flag"></i> Vietnamese</th>
           <th colspan="3"></th>
         </tr>
       </thead>
-      <tr v-for="(word, i) in words" :key="i">
-        <td>{{ word.english }}</td>
-        <td>{{ word.german }}</td>
-        <td>{{ word.vietnamese }}</td>
-        <td width="75" class="center aligned">
-          <router-link :to="{ name: 'show', params: { id: word._id } }"
-            >Show</router-link
+      <tbody>
+        <tr v-for="(word, i) in words" :key="i">
+          <td>{{ word.english }}</td>
+          <td>{{ word.german }}</td>
+          <td>{{ word.vietnamese }}</td>
+          <td width="75" class="center aligned">
+            <router-link :to="{ name: 'show', params: { id: word._id } }"
+              >Show</router-link
+            >
+          </td>
+          <td width="75" class="center aligned">
+            <router-link :to="{ name: 'edit', params: { id: word._id } }"
+              >Edit</router-link
+            >
+          </td>
+          <td
+            width="75"
+            class="center aligned"
+            @click.prevent="onDelete(word._id)"
           >
-        </td>
-        <td width="75" class="center aligned">
-          <router-link :to="{ name: 'edit', params: { id: word._id } }"
-            >Edit</router-link
-          >
-        </td>
-        <td
-          width="75"
-          class="center aligned"
-          @click.prevent="onDelete(word._id)"
-        >
-          <a :href="`/words/${word._id}`">Delete</a>
-        </td>
-      </tr>
+            <a :href="`/words/${word._id}`">Delete</a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" class="center aligned"><b>Total words:</b></td>
+          <td colspan="3" class="center aligned">
+            <b>{{ words.length }}</b>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>

@@ -57,6 +57,18 @@ export default {
       },
     };
   },
+  watch: {
+    word: {
+      immediate: true,
+      handler(newWord) {
+        this.localWord = {
+          german: newWord.german || "",
+          english: newWord.english || "",
+          vietnamese: newWord.vietnamese || "",
+        };
+      },
+    },
+  },
   methods: {
     onSubmit() {
       if (
